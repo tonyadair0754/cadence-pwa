@@ -1,0 +1,11 @@
+{
+  "name": "cadence-functions",
+  "description": "Scheduled push notifications for Cadence",
+  "main": "index.js",
+  "engines": { "node": "20" },
+  "dependencies": {
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0"
+  },
+  "private": true
+}
