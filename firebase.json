@@ -9,5 +9,16 @@
   },
   "functions": {
     "source": "functions"
+  },
+  "emulators": {
+    "firestore": {
+      "port": 8081
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "functions": {
+      "port": 5001
+    }
   }
 }

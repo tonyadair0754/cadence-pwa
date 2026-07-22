@@ -598,6 +598,7 @@ function taskCardHTML(it){
   const overdueBadge = it.deferredCount ? `<span class="badge warn">carried over ×${it.deferredCount}</span>` : '';
   const timeBadge = it.reminderTime ? `<span class="badge">⏰ ${formatTime(it.reminderTime)}</span>` : '';
   const freqLabel = { daily:'repeats daily', weekly:'repeats weekly', monthly:'repeats monthly' };
+  const projectLabel = it.project.taskType === 'staged' ? `<div class="task-project">${escapeHtml(it.project.title)}</div>` : '';
   let dueBadge = '';
   if(it.project.recurrence){
     dueBadge = `<span class="badge">${freqLabel[it.project.recurrence.freq]||'repeats'}</span>`;
@@ -610,7 +611,7 @@ function taskCardHTML(it){
     </div>
     <div class="task-body" onclick="openModal('${it.project.id}')" style="cursor:pointer;">
       <div class="task-title ${it.completed?'done':''}">${escapeHtml(it.title)}</div>
-      <div class="task-project">${escapeHtml(it.project.title)}</div>
+      ${projectLabel}
       <div class="task-meta">
         ${dueBadge}
         ${timeBadge}
